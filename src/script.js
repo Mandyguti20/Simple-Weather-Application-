@@ -81,7 +81,7 @@ function showCurrentTemp(response) {
   let updateTemp = document.querySelector("#current-temp");
   updateTemp.innerHTML = temperature;
   // call to update weather description
-  let description = response.data.weather[0].main;
+  let description = response.data.weather[0].description;
   let updateDescription = document.querySelector("#weather-description");
   updateDescription.innerHTML = description;
   //call to update wind speed

@@ -90,6 +90,10 @@ input {
     font-size: x-small;
 }
 
+.weather-description {
+    text-transform: capitalize;
+}
+
 .weather-temp {
     display: inline;
     text-align: left;
