@@ -176,3 +176,15 @@ input {
     text-align: center;
     font-size: xx-small;
 }
+
+.attribution {
+    text-align: center;
+    margin: auto;
+    font-size: x-small;
+    font-family: 'Courier New', Courier, monospace;
+}
+.open-source-code {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+}
