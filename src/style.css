@@ -27,7 +27,6 @@ h1 {
     display: flex;
     background-color: #0aa0f6;
     max-width: 500px;
-    min-width: 500px;
     border-radius: 40px;
     margin: 0 auto;
 }
@@ -58,7 +57,7 @@ input {
     transform: 120ms ease-in-out;
 }
 
-.big-sun {
+.big-icon {
     display: inline-block;
     margin: auto;
     font-size: 75px;
