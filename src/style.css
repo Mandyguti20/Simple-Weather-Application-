@@ -101,23 +101,22 @@ input {
     font-size: x-small;
 }
 
-.fahrenheit-sign {
+.units {
     font-size: medium;
     position: relative;
     bottom: 20px;
-    left: -4px;
+    left: 6px;
     transition: all 120ms ease-in;
+    font-weight: 100;
 }
-
-.fahrenheit-sign:hover {
-    background-color: white;
-    color: #0aa0f6;
-    cursor: pointer;
+.units :hover {
+    color: white;
 }
 
 
 .weekday-card-row {
     padding: 5px;
+    margin: auto;
 }
 
 .weekday-card-body {
