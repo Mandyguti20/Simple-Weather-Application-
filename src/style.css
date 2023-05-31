@@ -9,7 +9,6 @@ body {
 .container-fluid {
     margin: 0 auto;
     background: rgb(255, 255, 255);
-    width: 700px;
     border-radius: 10px;
 }
 
@@ -91,18 +90,18 @@ input {
     font-size: x-small;
 }
 
-.right-side-text {
+.weather-temp {
     display: inline;
     text-align: left;
     padding: 10px 0;
     font-size: xxx-large;
 }
 
-.right-side-text p {
+.weather-temp p {
     font-size: x-small;
 }
 
-.right-side-text-f {
+.fahrenheit-sign {
     font-size: medium;
     position: relative;
     bottom: 20px;
@@ -110,35 +109,15 @@ input {
     transition: all 120ms ease-in;
 }
 
-.right-side-text-f:hover {
+.fahrenheit-sign:hover {
     background-color: white;
     color: #0aa0f6;
     cursor: pointer;
 }
 
-.right-side-text-c {
-    font-size: medium;
-    position: relative;
-    bottom: 20px;
-    left: -4px;
-    transition: all 120ms ease-in;
-}
-
-.right-side-text-c:hover {
-    background-color: white;
-    color: #0aa0f6;
-    cursor: pointer;
-}
-
-.right-side-text-middle-sign {
-    font-size: medium;
-    position: relative;
-    bottom: 20px;
-    left: -4px;
-}
 
 .weekday-card-row {
-    padding: 10px;
+    padding: 5px;
 }
 
 .weekday-card-body {
