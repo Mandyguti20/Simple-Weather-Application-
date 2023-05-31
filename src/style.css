@@ -141,7 +141,8 @@ input {
 }
 
 .weekday-card-body {
-    display: flex;
+    display: block;
+
 }
 
 .weekday-cards {
@@ -172,7 +173,7 @@ input {
 }
 
 .weekday-f-degrees {
-    margin: 20px auto 5px;
+    margin: auto;
     text-align: center;
     font-size: xx-small;
 }
