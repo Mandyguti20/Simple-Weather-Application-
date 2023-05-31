@@ -21,15 +21,15 @@ h1 {
 .card-body {
     box-sizing: content-box;
     max-width: none;
-    padding: 40px 45px;
+    padding: 35px 0px;
 
 }
 
 .main-card {
     display: flex;
     background-color: #0aa0f6;
-    max-width: 100%;
-    min-width: 100%;
+    max-width: 500px;
+    min-width: 450px;
     border-radius: 40px;
 }
 
@@ -60,7 +60,6 @@ input {
     margin: 22px 5px 5px;
     font-size: 75px;
     background: transparent;
-    max-width: none;
     padding: 1px;
 }
 
