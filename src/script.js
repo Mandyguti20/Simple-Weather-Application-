@@ -91,6 +91,12 @@ function showCurrentTemp(response) {
   // call to update humidity %
   let humidity = response.data.main.humidity;
   let updateHumidity = document.querySelector("#humidity");
-  updateHumidity.innerHTML = humidity;
+    updateHumidity.innerHTML = humidity;
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute(
+        "src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute(
+        "alt", response.data.weather[0].description);
+
 }
 searchCity("New York");
