@@ -61,9 +61,9 @@ let submitButton = document.querySelector("#search-submit-button");
 submitButton.addEventListener("click", lookUpCity);
 
 function searchCity(city) {
-  let apiKey = "001bc651977f4b024af4d84282b0f02a";
+  let apiKey = "20d80b7td8b0c38f3771b8a6ocff3143";
   let units = "imperial";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showCurrentTemp);
 }
@@ -73,15 +73,15 @@ function searchCity(city) {
 function showCurrentTemp(response) {
   console.log(response);
   //call to update city name
-  let city = response.data.name;
+  let city = response.data.city;
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = city;
   //call to update temperature
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
   let updateTemp = document.querySelector("#current-temp");
   updateTemp.innerHTML = temperature;
   // call to update weather description
-  let description = response.data.weather[0].description;
+  let description = response.data.condition.description;
   let updateDescription = document.querySelector("#weather-description");
   updateDescription.innerHTML = description;
   //call to update wind speed
@@ -89,14 +89,13 @@ function showCurrentTemp(response) {
   let updateWind = document.querySelector("#wind");
   updateWind.innerHTML = wind;
   // call to update humidity %
-  let humidity = response.data.main.humidity;
+  let humidity = response.data.temperature.humidity;
   let updateHumidity = document.querySelector("#humidity");
     updateHumidity.innerHTML = humidity;
     let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute(
-        "src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    iconElement.setAttribute(
-        "alt", response.data.weather[0].description);
+        "alt", response.data.condition.description);
 
 }
 searchCity("New York");
