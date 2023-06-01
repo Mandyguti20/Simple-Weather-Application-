@@ -31,14 +31,14 @@ h1 {
 }
 
 input {
-    width: 70%;
+    width: 65%;
     display: inline-block;
-    border: 1px solid white;
+    border: 1px solid slategray;
     border-radius: 30px;
     margin: 0 auto;
     margin-bottom: 20px;
     font-size: x-small;
-    padding: 1px;
+    padding: 7px;
 }
 
 .search-box {
@@ -47,13 +47,19 @@ input {
 
 .submit-button {
     display: inline-block;
-    font-size: xx-small;
+    font-size: small;
     color: slategray;
     border: white;
     background-color: white;
-    border: 1px solid white;
+    border: 1px solid slategray;
     border-radius: 30px;
     transform: 120ms ease-in-out;
+    padding: 4px 10px;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 .big-icon img{
