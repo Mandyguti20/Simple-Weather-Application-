@@ -42,7 +42,8 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-dateTime.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
+dateTime.innerHTML = `${day}, ${month} ${date}, 
+${hours}:${minutes}`;
 
 //Change City Name
 

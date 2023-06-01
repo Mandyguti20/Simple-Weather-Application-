@@ -77,8 +77,8 @@ input {
 }
 
 .city-name h1 {
-    font-size: x-large;
-    margin: 5px 0px 0px;
+    font-size: 20px;
+    margin: 5px 0px 10px;
 }
 
 .city-name h2 {
@@ -101,8 +101,8 @@ input {
 .weather-temp {
     display: inline;
     text-align: left;
-    padding: 10px 0;
-    font-size: xxx-large;
+    padding: 10px;
+    font-size: 40px;
 }
 
 .weather-temp p {
@@ -112,10 +112,11 @@ input {
 .units {
     font-size: medium;
     position: relative;
-    bottom: 20px;
-    left: 6px;
+    bottom: 16px;
+    left: -5px;
     transition: all 120ms ease-in;
     font-weight: 100;
+    
 }
 .units :hover {
     color: white;
