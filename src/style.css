@@ -138,7 +138,7 @@ input {
 }
 
 
-.weekday-card-row {
+.weather-forecast-row {
     padding: 5px;
     margin: auto;
 }
@@ -154,6 +154,8 @@ input {
     margin: auto;
     border: 0px solid transparent;
     padding: 0;
+    position: relative;
+    top: -10px;
 }
 
 .weekday-sun {
@@ -162,6 +164,11 @@ input {
     right: auto;
     font-size: large;
     margin: 5px auto -10px;
+}
+
+.weekday-icon {
+    position:relative;
+    top: -5px;
 }
 
 .fa-cloud-sun-rain {
@@ -194,3 +201,5 @@ input {
     font-family: 'Courier New', Courier, monospace;
     font-size: x-small;
 }
+
+

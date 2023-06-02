@@ -68,7 +68,7 @@ function searchCity(city) {
   axios.get(apiUrl).then(showCurrentTemp);
 }
 
-//Get Weather
+//Get Current Weather
 
 function showCurrentTemp(response) {
   console.log(response);
@@ -103,7 +103,6 @@ function showCurrentTemp(response) {
 function displayCelsiusTemp(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#current-temp");
-    //Remove the active class fahrenheit link
     celsius.classList.add("active");
     fahrenheit.classList.remove("active");
     let celsiusTemp = Math.round((fahrenheitTemp - 32) * 5 / 9);
