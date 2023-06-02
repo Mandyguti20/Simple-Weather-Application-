@@ -124,8 +124,17 @@ input {
     font-weight: 100;
     
 }
+
+.units .active {
+    color: white;
+
+}
+
 .units :hover {
     color: white;
+    cursor: default;
+    text-decoration: none;
+
 }
 
 

@@ -96,6 +96,37 @@ function showCurrentTemp(response) {
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute(
         "alt", response.data.condition.description);
-
+    
+    fahrenheitTemp = response.data.temperature.current;
 }
+
+function displayCelsiusTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temp");
+    //Remove the active class fahrenheit link
+    celsius.classList.add("active");
+    fahrenheit.classList.remove("active");
+    let celsiusTemp = Math.round((fahrenheitTemp - 32) * 5 / 9);
+    
+    temperatureElement.innerHTML = celsiusTemp;
+}
+
+function displayFahrenheitTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temp");
+    celsius.classList.remove("active");
+    fahrenheit.classList.add("active");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let fahrenheitTemp = null;
+
+
+
+let celsius = document.querySelector("#metric-unit");
+celsius.addEventListener("click", displayCelsiusTemp);
+
+let fahrenheit = document.querySelector("#imperial-unit");
+fahrenheit.addEventListener("click", displayFahrenheitTemp);
+
 searchCity("New York");
