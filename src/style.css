@@ -155,15 +155,7 @@ input {
     border: 0px solid transparent;
     padding: 0;
     position: relative;
-    top: -10px;
-}
-
-.weekday-sun {
-    display: block;
-    margin: auto 0;
-    right: auto;
-    font-size: large;
-    margin: 5px auto -10px;
+    top: -15px;
 }
 
 .weekday-icon {
@@ -171,23 +163,23 @@ input {
     top: -5px;
 }
 
-.fa-cloud-sun-rain {
-    color: gray;
-
-}
-
 .weekday-text {
     margin: 20px auto 5px;
     text-align: center;
-    font-size: small;
+    font-size: medium;
 
 }
 
-.weekday-f-degrees {
+.weekday-degrees {
     margin: auto;
     text-align: center;
-    font-size: xx-small;
+    font-size: small;
 }
+
+.forecast-min {
+    opacity: 0.5;
+}
+
 
 .attribution {
     text-align: center;
