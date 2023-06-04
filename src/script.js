@@ -44,6 +44,38 @@ if (minutes < 10) {
 
 dateTime.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
+//display forecast
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast-row");
+    
+    let forecastHTML = '<div class="row">';
+    let days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
+    days.forEach(function (day) {
+        forecastHTML = forecastHTML +
+        `
+        <div class="col-2 weekday-cards">
+            <p class="weekday-text">${day}</p>
+                <img 
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" 
+                    alt="" 
+                    width="40"
+                    class="weekday-icon"
+                />
+                <div class="weekday-degrees">
+                    <span class="forecast-max">77</span> 
+                    <span class="forecast-min">24</span>
+                </div>
+        </div>
+    `; 
+    })
+    
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    
+}
+
 //Change City Name
 
 function lookUpCity(event) {
@@ -98,6 +130,7 @@ function showCurrentTemp(response) {
         "alt", response.data.condition.description);
     
     fahrenheitTemp = response.data.temperature.current;
+
 }
 
 function displayCelsiusTemp(event) {
@@ -129,3 +162,6 @@ let fahrenheit = document.querySelector("#imperial-unit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
 searchCity("New York");
+
+
+displayForecast();
