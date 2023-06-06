@@ -79,12 +79,13 @@ input {
     display: inline;
     margin-top: 20px;
     max-width: 100%;
+    margin-left: -20px;
 
 }
 
 .city-name h1 {
-    font-size: 20px;
-    margin: 5px 0px 10px;
+    font-size: 16px;
+    margin: 20px 0px 10px;
 }
 
 .city-name h2 {
@@ -107,8 +108,8 @@ input {
 .weather-temp {
     display: inline;
     text-align: left;
-    padding: 10px 12px;
-    font-size: 40px;
+    padding: 20px 0;
+    font-size: 35px;
 }
 
 .weather-temp p {
@@ -117,7 +118,7 @@ input {
 }
 
 .units {
-    font-size: medium;
+    font-size: 10px;
     position: relative;
     bottom: 16px;
     left: -5px;
