@@ -107,8 +107,8 @@ input {
 .weather-temp {
     display: inline;
     text-align: left;
-    padding: 5px 15px;
-    font-size: 45px;
+    padding: 10px 12px;
+    font-size: 40px;
 }
 
 .weather-temp p {
