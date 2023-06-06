@@ -108,11 +108,11 @@ input {
     display: inline;
     text-align: left;
     padding: 5px 15px;
-    font-size: 50px;
+    font-size: 45px;
 }
 
 .weather-temp p {
-    font-size: x-small;
+    font-size: 10px;
     margin-top: 5px;
 }
 
@@ -162,7 +162,7 @@ input {
 .weekday-text {
     margin: 20px auto 5px;
     text-align: center;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .weekday-degrees {
