@@ -84,7 +84,7 @@ input {
 
 .city-name h1 {
     font-size: 16px;
-    margin: 22px 0px 12px;
+    margin: 22px 0px 5px;
 }
 
 .city-name h2 {
@@ -97,7 +97,7 @@ input {
 }
 
 .current-date {
-    font-size: x-small;
+    font-size: 11px;
 }
 
 .weather-description {
