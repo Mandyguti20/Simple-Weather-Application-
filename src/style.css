@@ -64,14 +64,15 @@ input {
 
 .big-icon img{
     position:relative;
-    bottom: 15px;
-    right: 15px;
     margin: auto;
-    width: 170px;
-    height: 170px;
+    width: 135px;
+    height: 135px;
     background: transparent;
+}
 
-  
+.row {
+    margin-right: -30px;
+    margin-left: -14px;
 }
 
 .city-name {
@@ -79,8 +80,6 @@ input {
     display: inline;
     margin-top: 20px;
     max-width: 100%;
-
-
 }
 
 .city-name h1 {
