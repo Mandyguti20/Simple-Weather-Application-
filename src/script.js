@@ -49,7 +49,7 @@ dateTime.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thru", "Fri", "Sat"];
+    let days = ["Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", "Sunday"];
 
     return days[day];
 }

@@ -65,7 +65,7 @@ input {
 .big-icon img{
     position:relative;
     bottom: 15px;
-    right: 5px;
+    right: 15px;
     margin: auto;
     width: 170px;
     height: 170px;
@@ -79,7 +79,7 @@ input {
     display: inline;
     margin-top: 20px;
     max-width: 100%;
-    padding: 4px;
+
 }
 
 .city-name h1 {
@@ -107,12 +107,13 @@ input {
 .weather-temp {
     display: inline;
     text-align: left;
-    padding: 10px;
-    font-size: 40px;
+    padding: 10px 15px;
+    font-size: 50px;
 }
 
 .weather-temp p {
     font-size: x-small;
+    margin-top: 5px;
 }
 
 .units {
@@ -122,30 +123,25 @@ input {
     left: -5px;
     transition: all 120ms ease-in;
     font-weight: 100;
-    
 }
 
 .units .active {
     color: white;
-
 }
 
 .units :hover {
     color: white;
     cursor: default;
     text-decoration: none;
-
 }
 
 
 .weather-forecast-row {
-    padding: 5px;
-    margin: auto;
+    margin: -15px 10px 20px;
 }
 
 .weekday-card-body {
     display: block;
-
 }
 
 .weekday-cards {
@@ -155,7 +151,7 @@ input {
     border: 0px solid transparent;
     padding: 0;
     position: relative;
-    top: -15px;
+    top: -5px;
 }
 
 .weekday-icon {
@@ -166,8 +162,7 @@ input {
 .weekday-text {
     margin: 20px auto 5px;
     text-align: center;
-    font-size: medium;
-
+    font-size: 14px;
 }
 
 .weekday-degrees {
@@ -180,11 +175,13 @@ input {
     opacity: 0.5;
 }
 
-
+.row {
+    margin: 0 2px;
+}
 .attribution {
     text-align: center;
     margin: auto;
-    padding: 5px;
+    padding: 30px 0 5px;
     font-size: x-small;
     font-family: 'Courier New', Courier, monospace;
 }
