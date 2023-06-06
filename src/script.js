@@ -33,14 +33,13 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; 
+minutes = minutes < 10 ? '0' + minutes : minutes + " " +ampm;
+
 
 dateTime.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
