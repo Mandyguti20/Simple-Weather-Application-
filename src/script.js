@@ -44,66 +44,70 @@ if (minutes < 10) {
 
 dateTime.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}`;
 
+//timestamp
+
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thru", "Fri", "Sat"];
+
+    return days[day];
+}
+
 //display forecast
 
-function displayForecast() {
-    let forecastElement = document.querySelector("#forecast-row");
+function displayForecast(response) {
     
+
+    let forecast = response.data.daily;
+
+    let forecastElement = document.querySelector("#forecast-row");
+
     let forecastHTML = '<div class="row">';
-    let days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
-    days.forEach(function (day) {
-        forecastHTML = forecastHTML +
-        `
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 5) {
+            forecastHTML =
+                forecastHTML +
+                `
         <div class="col-2 weekday-cards">
-            <p class="weekday-text">${day}</p>
+            <p class="weekday-text">${formatDay(forecastDay.time)}</p>
                 <img 
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" 
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon
+                }.png" 
                     alt="" 
                     width="40"
-                    class="weekday-icon"
                 />
                 <div class="weekday-degrees">
-                    <span class="forecast-max">77</span> 
-                    <span class="forecast-min">24</span>
+                    <span class="forecast-max">${Math.round(
+                    forecastDay.temperature.maximum
+                )}° </span> 
+                    <span class="forecast-min">${Math.round(
+                    forecastDay.temperature.minimum
+                )}° </span>
                 </div>
         </div>
-    `; 
-    })
+    `;
+    }
+    });
     
 
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
-    
+ 
 }
 
-//Change City Name
+//get coordinates forecast
 
-function lookUpCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#search-city-input").value;
-  searchCity(cityInput);
-  }
-
-//Change city name by tapping enter
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", lookUpCity);
-
-//Change city name by submit button
-let submitButton = document.querySelector("#search-submit-button");
-submitButton.addEventListener("click", lookUpCity);
-
-function searchCity(city) {
-  let apiKey = "20d80b7td8b0c38f3771b8a6ocff3143";
-  let units = "imperial";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showCurrentTemp);
+function getForecast(coordinates) {
+    let apiKey = "20d80b7td8b0c38f3771b8a6ocff3143";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayForecast);
 }
 
 //Get Current Weather
 
 function showCurrentTemp(response) {
-  console.log(response);
+    
   //call to update city name
   let city = response.data.city;
   let cityName = document.querySelector("#city-name");
@@ -130,8 +134,35 @@ function showCurrentTemp(response) {
         "alt", response.data.condition.description);
     
     fahrenheitTemp = response.data.temperature.current;
+    
+    getForecast(response.data.coordinates);
 
 }
+
+//Change City Name
+
+function lookUpCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#search-city-input").value;
+  searchCity(cityInput);
+  }
+
+//Change city name by tapping enter
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", lookUpCity);
+
+//Change city name by submit button
+let submitButton = document.querySelector("#search-submit-button");
+submitButton.addEventListener("click", lookUpCity);
+
+function searchCity(city) {
+  let apiKey = "20d80b7td8b0c38f3771b8a6ocff3143";
+  let units = "imperial";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(showCurrentTemp);
+}
+
 
 function displayCelsiusTemp(event) {
     event.preventDefault();
@@ -162,6 +193,3 @@ let fahrenheit = document.querySelector("#imperial-unit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
 searchCity("New York");
-
-
-displayForecast();
